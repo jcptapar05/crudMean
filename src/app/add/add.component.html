@@ -1,0 +1,46 @@
+<form [formGroup]="movieForm" (ngSubmit)='add(movieName.value, category.value, details.value)' novalidate>
+
+  <!-- movie name -->
+  <div class="form-group">
+    <input type="text" class='form-control' name='movieName' formControlName="movieName" placeholder="movie name" #movieName>
+  </div>
+  <!-- movie name validator -->
+  <div *ngIf="movieForm.controls['movieName'].invalid && (movieForm.controls['movieName'].dirty
+  || movieForm.controls['movieName'].touched)" class='alert alert-danger'>
+    <div *ngIf='movieForm.controls["movieName"].errors.required'>
+      Movie name is required!
+    </div>
+  </div>
+
+  <!-- category name -->
+  <div class="form-group">
+      <input type="text" class='form-control' name='category' formControlName="category" placeholder="category" #category>
+    </div>
+    <!-- category validator -->
+    <div *ngIf="movieForm.controls['category'].invalid && (movieForm.controls['category'].dirty
+    || movieForm.controls['category'].touched)" class='alert alert-danger'>
+      <div *ngIf='movieForm.controls["category"].errors.required'>
+        Category is required!
+      </div>
+    </div>
+
+    <!-- Details name -->
+    <div class="form-group">
+        <input type="text" class='form-control' name='details' formControlName="details" placeholder="details" #details>
+      </div>
+      <!-- Details validator -->
+      <div *ngIf="movieForm.controls['details'].invalid && (movieForm.controls['details'].dirty
+      || movieForm.controls['details'].touched)" class='alert alert-danger'>
+        <div *ngIf='movieForm.controls["details"].errors.required'>
+          Details is required!
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <button class='btn btn-primary form-control'
+        type='submit'
+        [disabled]='movieForm.invalid || movieForm.pristine'>
+        Add Movie</button>
+      </div>
+
+</form>

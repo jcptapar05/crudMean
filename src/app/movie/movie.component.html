@@ -1,0 +1,19 @@
+
+<table class='table-striped'>
+  <thead>
+    <tr>
+        <th>Movie Name:</th>
+        <th>Category:</th>
+        <th>Details:</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor='let movie of movies'>
+          <td>{{ movie.movieName }}</td>
+          <td>{{ movie.category }}</td>
+          <td>{{ movie.details }}</td>
+          <td><button routerLink="edit/{{ movie._id }}" class="btn btn-outline-secondary">Edit</button></td>
+          <td><button class="btn btn-danger" (click)='delete(movie._id)'>delete</button></td>
+        </tr>
+  </tbody>
+</table>

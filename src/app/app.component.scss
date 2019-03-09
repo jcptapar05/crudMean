@@ -1,0 +1,19 @@
+nav {
+    margin-bottom: 20px;
+    ul {
+        display: inline;
+        text-align: center;
+    }
+
+    li {
+        margin: 20px;
+        text-transform: capitalize;
+        list-style: none;
+    }
+
+    a {
+        float: left;
+        margin-right: 20px;
+    }
+    
+}
